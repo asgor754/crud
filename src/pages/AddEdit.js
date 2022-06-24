@@ -25,7 +25,7 @@ const AddEdit = () => {
   }, [id]);
 
   const getSingleUser = async (id) => {
-    const response = await axios.get(`http://localhost:5000/user/${id}`);
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/user/${id}`);
     if (response.status === 200) {
       setState({ ...response.data[0] });
     }
@@ -40,14 +40,14 @@ const AddEdit = () => {
   };
 
   const addUser = async (data) => {
-    const response = await axios.post("http://localhost:5000/user", data);
+    const response = await axios.post("https://jsonplaceholder.typicode.com/users", data);
     if (response.status === 200) {
       toast.success(response.data);
     }
   };
 
   const updateUser = async (data, id) => {
-    const response = await axios.put(`http://localhost:5000/user/${id}`, data);
+    const response = await axios.put(`https://jsonplaceholder.typicode.com/user/${id}`, data);
     if (response.status === 200) {
       toast.success(response.data);
     }
