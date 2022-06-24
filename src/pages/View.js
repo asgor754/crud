@@ -17,7 +17,7 @@ const View = () => {
   console.log("user", id);
 
   const getSingleUser = async (id) => {
-    const response = await axios.get(`https://jsonplaceholder.typicode.com/user/${id}`);
+    const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
     console.log("response", response);
     if (response.status === 200) {
       setUser({ ...response.data[0] });
