@@ -22,7 +22,7 @@ const Home = () => {
     if (
       window.confirm("Are you sure that you wanted to delete that user record")
     ) {
-      const response = await axios.delete(`https://jsonplaceholder.typicode.com/user/${id}`);
+      const response = await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}`);
       if (response.status === 200) {
         toast.success(response.data);
         getUsers();
